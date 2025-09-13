@@ -1,0 +1,105 @@
+/* ========================
+   PART 1: CSS Animations
+======================== */
+
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background: #fdfdfd;
+  color: #333;
+}
+
+/* Animated button hover */
+.animated-btn {
+  padding: 12px 20px;
+  border: none;
+  background: #0077cc;
+  color: white;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.4s ease, transform 0.3s ease;
+}
+
+.animated-btn:hover {
+  background: #005fa3;
+  transform: scale(1.1);
+}
+
+/* Box animation */
+.box {
+  width: 100px;
+  height: 100px;
+  background: crimson;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+/* Bounce keyframes */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-50px); }
+}
+
+.bounce {
+  animation: bounce 1s ease-in-out infinite;
+}
+
+/* ========================
+   PART 3: Modal Animation
+======================== */
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  animation: fadeOut 0.5s forwards;
+}
+
+.modal.show {
+  display: flex;
+  animation: fadeIn 0.5s forwards;
+}
+
+/* Modal content box */
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  transform: translateY(-100px);
+  animation: slideUp 0.5s forwards;
+}
+
+.modal-content h3 {
+  margin-top: 0;
+}
+
+.modal-content span {
+  float: right;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(-100px); }
+  to { transform: translateY(0); }
+}
